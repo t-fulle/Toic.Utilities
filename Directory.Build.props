@@ -2,14 +2,7 @@
 <!-- Toic Directory.Build.props Version 0.3.0 -->
 
     <PropertyGroup>
-        <!-- Add framework subfolder in bin? (this is done manually with $(TargetFramework)) -->
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        
-        <!-- Add Runtime subfolder in bin? -->
-        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-
         <BaseIntermediateOutputPath>..\..\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>  
-        <!--<OutDir>..\..\bin\$(MSBuildProjectName)\$(Configuration)</OutDir>-->
         <OutDir>..\..\bin\$(MSBuildProjectName)\$(Configuration)\$(TargetFramework)\</OutDir>
     </PropertyGroup>
 
@@ -21,7 +14,7 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
 
         <!-- Need NuGet License? -->
-        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         
         <Nullable>enable</Nullable>
     </PropertyGroup>
