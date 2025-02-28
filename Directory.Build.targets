@@ -2,15 +2,23 @@
 <!-- Toic Directory.Build.targets Version 0.3.0 -->
 
     <PropertyGroup >
-        <UseWPF Condition=" $(TargetFramework.Contains('-windows')) ">true</UseWPF>
-
-        <OutputPath>..\..\bin\$(MSBuildProjectName)\$(Configuration)</OutputPath>
-        <!-- <PackageOutputPath>..\..\..\.NuGets\$(Product)</PackageOutputPath> -->
+        <!--Product is only defined in the project file, so we can first use it here if at all-->
         <PackageOutputPath>R:\.NuGets\$(Product)</PackageOutputPath>
+        <!--Synchronize the OutputPath here in the.targets so everything works as intended-->
+        <OutputPath>$(OutDir)</OutputPath>
+        <UseWPF Condition=" $(TargetFramework.Contains('-windows')) ">true</UseWPF>
     </PropertyGroup>
 
+    <PropertyGroup Label="General_Net48" Condition=" '$(TargetFramework)' == 'net48' ">
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
 
-    <PropertyGroup > 
+    <ItemGroup Label="General_Net48" Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="IsExternalInit" Version="1.0.3" />
+    </ItemGroup>
+
+
+    <PropertyGroup Label="RepositorySpecific"> 
         <Authors>Thomas Fulle</Authors>
         <PackageProjectUrl>https://github.com/t-fulle/Toic.Utilities</PackageProjectUrl>
     </PropertyGroup>

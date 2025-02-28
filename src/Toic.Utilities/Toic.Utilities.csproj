@@ -10,6 +10,6 @@
         <PackageReleaseNotes>
             0.1.0   - Initial release with the `ExecuteOnDifferentThread` extension methods
         </PackageReleaseNotes>
-        <PackageTags>ttest;test</PackageTags>
+        <PackageTags>toic;util;tutil</PackageTags>
     </PropertyGroup>
 </Project>

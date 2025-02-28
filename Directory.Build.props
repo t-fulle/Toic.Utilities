@@ -2,23 +2,26 @@
 <!-- Toic Directory.Build.props Version 0.3.0 -->
 
     <PropertyGroup>
+        <!-- Add framework subfolder in bin? (this is done manually with $(TargetFramework)) -->
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        
+        <!-- Add Runtime subfolder in bin? -->
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
         <BaseIntermediateOutputPath>..\..\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>  
-        <OutDir>..\..\bin\$(MSBuildProjectName)\$(Configuration)</OutDir>
+        <!--<OutDir>..\..\bin\$(MSBuildProjectName)\$(Configuration)</OutDir>-->
+        <OutDir>..\..\bin\$(MSBuildProjectName)\$(Configuration)\$(TargetFramework)\</OutDir>
     </PropertyGroup>
 
     <PropertyGroup>
-        <DotNet>net8.0</DotNet>
-        <DotNetWindows>net8.0-windows</DotNetWindows>
-        <DotNetAll>net8.0;net8.0-windows</DotNetAll>
+        <DotNet>net48;net6.0;net8.0</DotNet>
+        <DotNetWindows>net48;net6.0-Windows;net8.0-windows</DotNetWindows>
+        <DotNetAll>net48;net6.0-Windows;net8.0;net8.0-windows</DotNetAll>
 
         <PlatformTarget>AnyCPU</PlatformTarget>
 
-        <!-- Add framework subfolder in bin? -->
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <!-- Add Runtime subfolder in bin? -->
-        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
         <!-- Need NuGet License? -->
-        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         
         <Nullable>enable</Nullable>
     </PropertyGroup>
@@ -43,8 +46,9 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>    
      
-    <PropertyGroup>
+    <PropertyGroup Label="RepositorySpecific">
+        <!--<TargetFrameworks>$(DotNet)</TargetFrameworks>-->
         <TargetFrameworks>$(DotNet)</TargetFrameworks>
-        <Version>0.1.0</Version>
+        <Version>0.1.0.1</Version>
     </PropertyGroup>
 </Project>
