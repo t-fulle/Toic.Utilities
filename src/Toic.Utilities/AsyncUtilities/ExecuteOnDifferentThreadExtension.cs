@@ -27,5 +27,15 @@ namespace Toic.AsyncUtilities
         {
             return await Task.Run(func);
         }
+
+        public static async Task ExecuteOnDifferentThread(this Task task)
+        {
+            await Task.Run(async () => await task);
+        }
+
+        public static async Task<T> ExecuteOnDifferentThread<T>(this Task<T> task)
+        {
+            return await Task.Run<T>(async () => await task);
+        }
     }
 }

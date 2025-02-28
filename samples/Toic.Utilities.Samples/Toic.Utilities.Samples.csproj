@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <Product>Toic.Utilities.Samples</Product>
+      <RootNamespace>Toic</RootNamespace>
+
+      <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Toic.Utilities\Toic.Utilities.csproj" />
+  </ItemGroup>
+</Project>

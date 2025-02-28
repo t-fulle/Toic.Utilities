@@ -42,6 +42,6 @@
     <PropertyGroup Label="RepositorySpecific">
         <!--<TargetFrameworks>$(DotNet)</TargetFrameworks>-->
         <TargetFrameworks>$(DotNet)</TargetFrameworks>
-        <Version>0.1.0.1</Version>
+        <Version>0.1.1.0</Version>
     </PropertyGroup>
 </Project>

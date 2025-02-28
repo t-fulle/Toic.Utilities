@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toic.Utilities.UnitTests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{764755CA-95A1-4FC7-ADB4-085F63C555A3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toic.Utilities.Samples", "samples\Toic.Utilities.Samples\Toic.Utilities.Samples.csproj", "{30419F1B-7D16-4E81-BE8F-F860F5638FF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{14E0B3C7-36FC-4B5D-9606-808CEC1619E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14E0B3C7-36FC-4B5D-9606-808CEC1619E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14E0B3C7-36FC-4B5D-9606-808CEC1619E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30419F1B-7D16-4E81-BE8F-F860F5638FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30419F1B-7D16-4E81-BE8F-F860F5638FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30419F1B-7D16-4E81-BE8F-F860F5638FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30419F1B-7D16-4E81-BE8F-F860F5638FF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0319BCA9-F411-420B-A925-0F1B317E4AB3} = {6DBFD6F4-931D-458A-A598-FCEB5D21411E}
 		{14E0B3C7-36FC-4B5D-9606-808CEC1619E8} = {B71A69BA-EA18-4C9D-B061-BD723102FB12}
+		{30419F1B-7D16-4E81-BE8F-F860F5638FF7} = {764755CA-95A1-4FC7-ADB4-085F63C555A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37AFB256-CC20-44B2-BD5F-9500AE8BE23A}

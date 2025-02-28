@@ -65,6 +65,26 @@ namespace Toic.AsyncUtilities
         }
 
         [Fact]
+        public async Task ExecuteOnDifferentThread_Task_ExecutesOnDifferentThread()
+        {
+            // Arrange
+            int initialThreadId = Thread.CurrentThread.ManagedThreadId;
+            int funcThreadId = initialThreadId;
+
+            Func<Task> func = async () =>
+            {
+                await Task.Delay(100);
+                funcThreadId = Thread.CurrentThread.ManagedThreadId;
+            };
+
+            // Act
+            await func.ExecuteOnDifferentThread();
+
+            // Assert
+            Assert.NotEqual(initialThreadId, funcThreadId);
+        }
+
+        [Fact]
         public async Task ExecuteOnDifferentThread_FuncTaskWithResult_ExecutesOnDifferentThread()
         {
             // Arrange
@@ -136,6 +156,40 @@ namespace Toic.AsyncUtilities
             // Act & Assert
             var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => func.ExecuteOnDifferentThread());
             Assert.Equal("Test exception", exception.Message);
+        }
+
+        [Fact]
+        public async Task ExecuteOnDifferentThread_Task_ShouldRunOnDifferentThread()
+        {
+            int originalThreadId = Thread.CurrentThread.ManagedThreadId;
+            int executionThreadId = originalThreadId; // Initialize with the same thread ID
+
+            async Task TestMethod()
+            {
+                executionThreadId = Thread.CurrentThread.ManagedThreadId;
+            }
+
+            await TestMethod().ExecuteOnDifferentThread();
+
+            Assert.NotEqual(originalThreadId, executionThreadId);
+        }
+
+        [Fact]
+        public async Task ExecuteOnDifferentThread_TaskWithResult_ShouldRunOnDifferentThreadAndReturnCorrectValue()
+        {
+            int originalThreadId = Thread.CurrentThread.ManagedThreadId;
+            int executionThreadId = originalThreadId; // Initialize with the same thread ID
+
+            async Task<int> TestMethod()
+            {
+                executionThreadId = Thread.CurrentThread.ManagedThreadId;
+                return 42; // Some return value
+            }
+
+            int result = await TestMethod().ExecuteOnDifferentThread();
+
+            Assert.NotEqual(originalThreadId, executionThreadId);
+            Assert.Equal(42, result); // Ensure the returned value is correct
         }
     }
 }
