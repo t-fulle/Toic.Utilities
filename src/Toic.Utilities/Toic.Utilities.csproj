@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <RootNamespace>Toic</RootNamespace>
+      <Product>Toic.Utilities</Product>
+  </PropertyGroup>
+
+    <PropertyGroup>
+        <Description>Utilities that help to improve coding quality, readability and simplify cumbersome tasks</Description>
+        <PackageReleaseNotes>
+            0.1.0   - Initial release with the `ExecuteOnDifferentThread` extension methods
+        </PackageReleaseNotes>
+        <PackageTags>ttest;test</PackageTags>
+    </PropertyGroup>
+</Project>

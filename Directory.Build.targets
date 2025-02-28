@@ -1,0 +1,21 @@
+<Project>
+<!-- Toic Directory.Build.targets Version 0.3.0 -->
+
+    <PropertyGroup >
+        <UseWPF Condition=" $(TargetFramework.Contains('-windows')) ">true</UseWPF>
+
+        <OutputPath>..\..\bin\$(MSBuildProjectName)\$(Configuration)</OutputPath>
+        <!-- <PackageOutputPath>..\..\..\.NuGets\$(Product)</PackageOutputPath> -->
+        <PackageOutputPath>R:\.NuGets\$(Product)</PackageOutputPath>
+    </PropertyGroup>
+
+
+    <PropertyGroup > 
+        <Authors>Thomas Fulle</Authors>
+        <PackageProjectUrl>https://github.com/t-fulle/Toic.Utilities</PackageProjectUrl>
+    </PropertyGroup>
+   
+    <PropertyGroup>
+        <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
+    </PropertyGroup>
+</Project>
